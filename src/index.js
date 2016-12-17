@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 const API_KEY = 'AIzaSyDe1gPq_hqwaMwLH9w3pdvzLnngvOcrnk4';
 
 const App = () => {
-  return <div>Hi!</div>;
+  return <div>Food Trip</div>;
 };
 
 // render App to DOM;
