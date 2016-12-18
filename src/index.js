@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import StartEndForm from './start_end_form.js';
+import StartEndForm from './components/start_end_form.js';
 
 const API_KEY = 'AIzaSyDe1gPq_hqwaMwLH9w3pdvzLnngvOcrnk4';
 
