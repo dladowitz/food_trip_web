@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import StepsList from './steps_list.js';
 
 class StartEndForm extends Component {
   constructor(props) {
@@ -8,15 +8,15 @@ class StartEndForm extends Component {
     this.state = {
       startLocation: 'San Francisco, CA',
       endLocation: 'Saratoga, CA',
-      directions: null
+      steps: []
     };
   }
 
   onInputChange(event) {
     if (event.target.name === 'startLocation') {
-      this.setState({ startLocation: event.target.value });
+      this.setState({ startLocation: event.target.value, steps: [] });
     } else if (event.target.name === 'endLocation') {
-        this.setState({ endLocation: event.target.value });
+        this.setState({ endLocation: event.target.value, steps: [] });
     }
 
     console.log('State: ', this.state);
@@ -35,25 +35,12 @@ class StartEndForm extends Component {
     directionsService.route(request, (response, status) => {
       console.log('Returning from directionsService');
       if (status === 'OK') {
-        this.setState({ directions: response.routes[0].legs[0] });
+        this.setState({ steps: response.routes[0].legs[0].steps });
         console.log('state: ', this.state);
       } else {
         console.log('directionsService Error: ', response);
       }
     });
-  }
-
-  steps() {
-    if (this.state.directions) {
-      console.log('rendering steps');
-      this.state.directions.steps.map((step) => {
-        // return <li>{step.start_location.lat.name}</li>;
-        console.log('iterating over step');
-        return <li>lat: 100</li>;
-      });
-    } else {
-      console.log('not rendering steps');
-    }
   }
 
   request() {
@@ -101,10 +88,7 @@ class StartEndForm extends Component {
         </form>
 
 
-        <ul>
-          <li> Steps: </li>
-          {this.steps()}
-        </ul>
+        <StepsList steps={this.state.steps} />
       </div>
     );
   }
