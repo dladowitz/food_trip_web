@@ -8,7 +8,7 @@ const StepsList = (props) => {
   });
 
   return (
-    <ul className='col-md-8 list-group'>
+    <ul className='col-md-12 list-group'>
       {steps}
     </ul>
   );

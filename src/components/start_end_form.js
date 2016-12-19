@@ -19,7 +19,7 @@ class StartEndForm extends Component {
         this.setState({ endLocation: event.target.value, steps: [] });
     }
 
-    console.log('State: ', this.state);
+    console.log('StartEndForm State: ', this.state);
   }
 
   onSubmit(event) {
@@ -36,7 +36,7 @@ class StartEndForm extends Component {
       console.log('Returning from directionsService');
       if (status === 'OK') {
         this.setState({ steps: response.routes[0].legs[0].steps });
-        console.log('state: ', this.state);
+        console.log('StartEndForm State: ', this.state);
       } else {
         console.log('directionsService Error: ', response);
       }
