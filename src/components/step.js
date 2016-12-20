@@ -76,10 +76,7 @@ class Step extends Component {
 
   createState() {
     const yelpKeys = {
-      consumerKey: 'nVeyIROhiW6EMFBcA5iA1w',
-      consumerSecret: 'GrP921_svILXGljhQSnm1_tMBX8',
-      tokenSecret: '9XpvW154RPZxgB-LPcI5llrs47U',
-      token: 'S5dzlOqQCjgMptscu9cZTG_yzyFaAyvq'
+      // Pull keys from .env.js
     };
 
     const searchParams = {

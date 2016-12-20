@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import StartEndForm from './components/start_end_form.js';
 
-const API_KEY = 'AIzaSyDe1gPq_hqwaMwLH9w3pdvzLnngvOcrnk4';
+const API_KEY = 'xxxxxxxx';
 
 const App = () => {
   return (
